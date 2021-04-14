@@ -14,12 +14,15 @@ test:
 
 lint:
 	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
-	pylint --disable=R,C,W1203,W0702 tests/functional/*.py tests/unit/*.py *.py
+	pylint --disable=R,C,W1203,W0702 tests/load/*.py tests/unit/*.py *.py
 	# R refactoring related checks
 	# C convention related checks
 	# W1203: logging-fstring-interpolation
 	#   Use %s formatting in logging functions
 	#   Used when a logging statement has a call form of "logging.<logging method>(f"...")"
 	# W0702: No exception type(s) specified (bare-except)
+
+load:
+	locust --conf=tests/load/locust.conf -f tests/load/locustfile.py
 
 all: install lint test
