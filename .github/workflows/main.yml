@@ -2,6 +2,12 @@ name: Python application test with Github Actions
 
 on: [push]
 
+env:
+  AZURE_WEBAPP_NAME: flask-ml-service-agaupmann # set this to your application's name
+  WORKING_DIRECTORY: '.'        # set this to the path to your path of working directory inside github repository, defaults to the repository root
+  PYTHON_VERSION: '3.6' 
+  STARTUP_COMMAND: ''           # set this to the startup command required to start the gunicorn server. default it is empty
+
 jobs:
   build:
 
@@ -9,10 +15,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.6
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
       uses: actions/setup-python@v1
       with:
-        python-version: 3.6
+        python-version: ${{ env.PYTHON_VERSION }}
     - name: Install dependencies
       run: |
         make install
@@ -22,3 +28,22 @@ jobs:
     - name: Test with pytest
       run: |
         make test
+    # Azure login
+    - uses: azure/login@v1
+      with:
+       creds: ${{ secrets.AZURE_CREDENTIALS_GITHUB_SECRET }}
+    - uses: azure/appservice-settings@v1
+      with:
+       app-name: ${{ env.AZURE_WEBAPP_NAME }}
+       mask-inputs: false
+       general-settings-json: '{"linuxFxVersion": "PYTHON|${{ env.PYTHON_VERSION }}"}' #'General configuration settings as Key Value pairs'
+    # deploy web app
+    - uses: azure/webapps-deploy@v2
+      with:
+       app-name: ${{ env.AZURE_WEBAPP_NAME }}
+       package: ${{ env.WORKING_DIRECTORY }}
+       startup-command: ${{ env.STARTUP_COMMAND }}
+    # Azure logout
+    - name: logout
+      run: |
+       az logout
