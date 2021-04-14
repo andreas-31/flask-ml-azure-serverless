@@ -10,14 +10,17 @@ from app import app
 @pytest.fixture
 def client():
     """Configures the app for testing
-
     Sets app config variable ``TESTING`` to ``True``
-
     :return: App for testing
     """
-
     app.config['TESTING'] = True
     client = app.test_client()
-
     yield client
 
+@pytest.fixture
+def my_html():
+    return '<h3>Sklearn Prediction Home</h3>'
+
+@pytest.fixture
+def my_prediction():
+    return {"prediction":[20.35373177134412]}

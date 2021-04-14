@@ -1,4 +1,5 @@
-# https://locust.io/
+# Definition of load tests to be run by locust
+# https://locust.io/ | https://pypi.org/project/locust/
 
 from locust import HttpUser, between, task
 
