@@ -47,3 +47,7 @@ jobs:
     - name: logout
       run: |
        az logout
+    # run load tests
+    - name: Run load tests
+      run: |
+        make load
