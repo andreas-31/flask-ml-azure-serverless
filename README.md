@@ -46,3 +46,11 @@ $ git clone git@github.com:andreas-31/flask-ml-azure-serverless.git
 | ![Project cloned into Azure Cloud Shell](https://user-images.githubusercontent.com/20167788/115139793-3ef63b00-a034-11eb-9766-dbfe9cc983f1.PNG) | 
 |:--:| 
 | *Project cloned into Azure Cloud Shell* |
+
+| ![Passing tests after make all](https://user-images.githubusercontent.com/20167788/115149682-81843b80-a065-11eb-8e58-e7be4a368939.PNG) | 
+|:--:| 
+| *Passing tests that are displayed after running the make all command from the Makefile.* |
+
+| ![Output of a test run](https://user-images.githubusercontent.com/20167788/115150446-b8a81c00-a068-11eb-8e4b-0eacd65aa881.PNG) | 
+|:--:| 
+| *Output of a test run* |
