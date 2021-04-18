@@ -1,7 +1,9 @@
 # flask-ml-azure-serverless
+[![Python application test with Github Actions](https://github.com/andreas-31/flask-ml-azure-serverless/actions/workflows/main.yml/badge.svg)](https://github.com/andreas-31/flask-ml-azure-serverless/actions/workflows/main.yml)
+
 Deploy Flask Machine Learning Application on Azure App Services
 
-## Purpose of Machine Learning Application
+## API of Machine Learning Application
 The application is implemented in Python by using the Flask framework. It uses a pre-built machine learning model to predict housing prices based on the [Bosten Housing Dataset](https://www.kaggle.com/prasadperera/the-boston-housing-dataset). The prediction functionality is made available as API endpoint "/predict". By sending a feature set formatted as JSON in an HTTP POST request, the predicted price is returned formatted as JSON. Example for querying the API endpoint:
 ```
 $ curl -d '{
@@ -26,7 +28,8 @@ $ curl -d '{
 }'\
      -H "Content-Type: application/json" \
      -X POST "https://flask-ml-service-agaupmann.azurewebsites.net/predict"
-$ {"prediction":[20.35373177134412]}
+
+{"prediction":[20.35373177134412]}
 ```
 Note: the following bash scripts can be used to send these requests for yourself.
 - ```make_predict.sh``` to query an app running on your local machine
