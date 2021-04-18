@@ -39,6 +39,6 @@ After seeting up an Azure account you can log into the Azure portal and start a 
 ```
 $ git clone git@github.com:andreas-31/flask-ml-azure-serverless.git
 ```
-![Project cloned into Azure Cloud Shell](/screenshots/01_Project_cloned_into_Azure_Cloud_Shell.PNG)
+![Project cloned into Azure Cloud Shell](https://user-images.githubusercontent.com/20167788/115139793-3ef63b00-a034-11eb-9766-dbfe9cc983f1.PNG)
 
 
