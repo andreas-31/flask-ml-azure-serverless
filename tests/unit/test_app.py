@@ -35,7 +35,7 @@ def test_predict(client, my_prediction):
     url = '/predict'
 
     response = client.post(url, json=data)
-    print(response, response.json['prediction'][0]) # $ pytest -rP
+    print(response, "Prediction:", response.json['prediction'][0]) # $ pytest -rP
 
     assert response.content_type == 'application/json'
     assert response.json['prediction'][0] == my_prediction['prediction'][0]
