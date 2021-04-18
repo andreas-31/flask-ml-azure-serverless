@@ -5,7 +5,7 @@
 def test_html(client, my_html):
     landing = client.get("/")
     html = landing.data.decode()
-    #print(html) # $ pytest -rP
+    print(html) # $ pytest -rP
     #assert "<h3>Sklearn Prediction Home</h3>" in html
     assert my_html in html
 
@@ -35,7 +35,7 @@ def test_predict(client, my_prediction):
     url = '/predict'
 
     response = client.post(url, json=data)
-    #print(response) # $ pytest -rP
+    print(response, response.json['prediction'][0]) # $ pytest -rP
 
     assert response.content_type == 'application/json'
     assert response.json['prediction'][0] == my_prediction['prediction'][0]
