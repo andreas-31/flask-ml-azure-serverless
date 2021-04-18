@@ -13,6 +13,7 @@ lint:
 	pylint --disable=R,C,W1203,W0702 tests/load/*.py tests/unit/*.py *.py
 
 load:
+	./make_predict_azure_app.sh
 	locust --conf=tests/load/locust.conf -f tests/load/locustfile.py
 
 all: install lint test
