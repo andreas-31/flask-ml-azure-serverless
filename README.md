@@ -35,5 +35,10 @@ Note: the following bash scripts can be used to send these requests for yourself
 ## Architecture of Machine Learning Application
 
 ## Description of Using this Repo to Create a CI/CD Pipline with GitHub and Azure
+After seeting up an Azure account you can log into the Azure portal and start a cloud shell. In the cloud shell you can clone the repository with the command
+```
+$ git clone git@github.com:andreas-31/flask-ml-azure-serverless.git
+```
+![Project cloned into Azure Cloud Shell](/screenshots/01_Project_cloned_into_Azure_Cloud_Shell.PNG)
 
 
