@@ -7,7 +7,7 @@ URL="https://${app_name}.azurewebsites.net:$PORT/predict"
 echo "Getting prediction from URL: $URL"
 
 # POST method predict
-curl -d '{
+curl --max-time 120 --connect-timeout 60 -d '{
    "CHAS":{
       "0":0
    },
@@ -28,9 +28,9 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST "$URL" 
+     -X POST "$URL"  || echo "curl timeout"
 
-curl -d '{
+curl --max-time 120 --connect-timeout 60 -d '{
    "CHAS":{
       "0":1
    },
@@ -51,5 +51,5 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST "$URL" 
+     -X POST "$URL"  || echo "curl timeout"
 
