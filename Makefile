@@ -1,5 +1,5 @@
 setup:
-	python3.7 -m venv ~/.azure-devops
+	python3 -m venv ~/.azure-devops
 	source ~/.azure-devops/bin/activate
 	
 install:
