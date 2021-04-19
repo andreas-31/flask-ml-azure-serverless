@@ -37,15 +37,17 @@ Note: the following bash scripts can be used to send these requests for yourself
 
 ## Architecture of Machine Learning Application
 
-## Description of Using this Repo to Create a CI/CD Pipline with GitHub and Azure
-After seeting up an Azure account you can log into the Azure portal and start a cloud shell. In the cloud shell you can clone the repository with the command
-```
-$ git clone git@github.com:andreas-31/flask-ml-azure-serverless.git
-```
+## Description How To Use CI/CD Pipline with GitHub and Azure
+After setting up an [Azure account](https://azure.microsoft.com/en-us/free/), you can log into the Azure portal and start the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). You can clone the repository into Azure Cloud Shell via HTTPS or SSH. The following screenshot shows the command for cloning via SSH.
 
 | ![Project cloned into Azure Cloud Shell](https://user-images.githubusercontent.com/20167788/115139793-3ef63b00-a034-11eb-9766-dbfe9cc983f1.PNG) | 
 |:--:| 
 | *Project cloned into Azure Cloud Shell* |
+
+After having successfully cloned the repository, you can setup a Python 3.7 virtual environment with required dependencies (modules) by running following command.
+```
+make setup
+```
 
 | ![Passing tests after make all](https://user-images.githubusercontent.com/20167788/115149682-81843b80-a065-11eb-8e58-e7be4a368939.PNG) | 
 |:--:| 
