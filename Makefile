@@ -18,13 +18,9 @@ lint:
 	pylint --disable=R,C,W1203,W0702 tests/load/*.py tests/unit/*.py *.py
 
 load:
-<<<<<<< Updated upstream
+	source ~/.azure-devops/bin/activate
 	./make_predict_azure_app.sh &&\
 		sleep 15  &&\
 		locust --conf=tests/load/locust.conf -f tests/load/locustfile.py
-=======
-	source ~/.azure-devops/bin/activate
-	locust --conf=tests/load/locust.conf -f tests/load/locustfile.py
->>>>>>> Stashed changes
 
 all: install lint test
