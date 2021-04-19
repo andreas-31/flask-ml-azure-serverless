@@ -38,6 +38,7 @@ Note: the following bash scripts can be used to send these requests for yourself
 ## Architecture of Machine Learning Application
 
 ## Description How To Use CI/CD Pipline with GitHub and Azure
+### Continuous Integration
 After setting up an [Azure account](https://azure.microsoft.com/en-us/free/), log into the Azure portal and start the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). Clone the repository into Azure Cloud Shell via HTTPS or SSH. The following screenshot shows the command for cloning via SSH.
 
 | ![Project cloned into Azure Cloud Shell](https://user-images.githubusercontent.com/20167788/115139793-3ef63b00-a034-11eb-9766-dbfe9cc983f1.PNG) | 
@@ -61,3 +62,24 @@ Unit tests are configured with pytest and can be run explicitly by executing the
 | ![Output of a test run](https://user-images.githubusercontent.com/20167788/115150446-b8a81c00-a068-11eb-8e4b-0eacd65aa881.PNG) | 
 |:--:| 
 | *Output of a test run started with ```make test```* |
+
+For Continuous Integration now and Continuous Delivery afterwards, GitHub Actions is used. The workflow is defined in the YAML file ```.github/workflows/main.yml``` in this repository. The workflow contains these stages:
+- CI: Set up Python 3.7
+- CI: Install dependencies
+- CI: Lint Python source code with pylint
+- CI: Run unit tests with pytest
+- CD: Login to Azure
+- CD: Configure Azure App Services
+- CD: Deploy app to Azure App Services
+- CD: Logout from Azure
+- CD: Run load tests against deployed app with locust
+
+| ![GitHub Actions YAML file for CI and CD, Page 1](https://user-images.githubusercontent.com/20167788/115237132-7b04cb00-a11c-11eb-877a-1c0f1faf5823.png) | 
+|:--:| 
+| *GitHub Actions YAML file for CI and CD, Page 1* |
+
+| ![GitHub Actions YAML file for CI and CD, Page 2](https://user-images.githubusercontent.com/20167788/115237153-822bd900-a11c-11eb-90d6-e74c61d5f5f7.png) | 
+|:--:| 
+| *GitHub Actions YAML file for CI and CD, Page 2* |
+
+### Continuous Delivery
