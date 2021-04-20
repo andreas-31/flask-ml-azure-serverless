@@ -39,32 +39,39 @@ Note: the following bash scripts can be used to send these requests for yourself
 
 ## Description How To Use CI/CD Pipline with GitHub and Azure
 ### Continuous Integration
+#### Azure Cloud Shell Setup
 After setting up an [Azure account](https://azure.microsoft.com/en-us/free/), log into the Azure portal and start the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). Clone the repository into Azure Cloud Shell via HTTPS or SSH. The following screenshot shows the command for cloning via SSH.
 
 | ![Project cloned into Azure Cloud Shell](https://user-images.githubusercontent.com/20167788/115139793-3ef63b00-a034-11eb-9766-dbfe9cc983f1.PNG) | 
 |:--:| 
 | *Project cloned into Azure Cloud Shell* |
 
-After having successfully cloned the repository, setup a Python virtual environment with required dependencies (modules) by running following commands.
+#### Prepare Environment in Azure Cloud Shell
+After having successfully cloned the repository, set up a Python virtual environment with required dependencies (modules) by running following commands.
 ```
-make setup
-source ~/.azure-devops/bin/activate
-make all
+$ make setup                          # Python virtual environment is created in a hidden subfolder in user's home directory
+$ source ~/.azure-devops/bin/activate # Python virtual environment is activated
+(.azure-devops)$ make all             # Required Python modules listed in "requirements.txt" are installed, Python files are linted and the ML app is tested
 ```
-A Python 3.7 virtual environment is created in a hidden subfolder in your home directory: ```~/.azure-devops``` and is activated. Required Python modules listed in ```requirements.txt``` are installed, Python files are linted and the ML app is tested.
 
 | ![Passing tests after make all](https://user-images.githubusercontent.com/20167788/115149682-81843b80-a065-11eb-8e58-e7be4a368939.PNG) | 
 |:--:| 
 | *Passing tests that are displayed after running the ```make all``` command from the Makefile.* |
 
+#### Testing
 Unit tests are configured with pytest and can be run explicitly by executing the command ```make test```. These tests are defined in files ```tests/conftest.py``` and ```tests/unit/test_app.py```. Unit tests check the availability and responses of the Flask routes or URLs "/" and "/predict".
 
 | ![Output of a test run](https://user-images.githubusercontent.com/20167788/115150446-b8a81c00-a068-11eb-8e4b-0eacd65aa881.PNG) | 
 |:--:| 
 | *Output of a test run started with ```make test```* |
 
-For Continuous Integration now and Continuous Delivery afterwards, GitHub Actions is used. The workflow is defined in the YAML file ```.github/workflows/main.yml``` in this repository. The workflow contains these stages:
-- CI: Set up Python 3.7
+Load tests are configured and executed with locust and can be run explicitly by executing one of these commands:
+- ```make loadlocalhost```: load test the application running on localhost (http://localhost:5000)
+- ```make load```: load test the application that is deployed on Azure App Services (in my case https://flask-ml-service-agaupmann.azurewebsites.net)
+Generated traffic load is sent to Flask routes or URLs "/" and "/predict".
+
+For automated CI/CD (Continuous Integration and Continuous Delivery), GitHub Actions is used. The CI/CD workflow is defined in the YAML file ```.github/workflows/main.yml``` in this repository. The workflow contains these stages:
+- CI: Set up Python environment
 - CI: Install dependencies
 - CI: Lint Python source code with pylint
 - CI: Run unit tests with pytest
