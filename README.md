@@ -36,6 +36,25 @@ Note: the following bash scripts can be used to send these requests for yourself
 - ```make_predict_azure_app.sh``` to query an app running remotly on another machine
 
 ## Architecture of Machine Learning Application
+| ![Architectural Diagram of the Machine Learning application](https://user-images.githubusercontent.com/20167788/115421185-0acd7680-a1fc-11eb-8cde-47e7ea61d5c5.png) | 
+|:--:| 
+| *Architectural Diagram of the Machine Learning application* |
+
+The architecture of the Machine Learning Application comprises the following elements and services:
+- GitHub
+    * Version Control: Git repository for application's source code and configuration files
+    * CI/CD Pipeline: GitHub actions workflow for automated Continuous Integration and Continuous Delivery of the application
+- Azure (Microsoft's Public Cloud)
+    * [App Service](https://azure.microsoft.com/en-us/services/app-service/): managed platform for deploying and running web applications.
+    * [App Service Plan](https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans): defines a set of compute resources for a web app to run.
+        + Region (West US, East US, etc.)
+        + Number of VM instances
+        + Size of VM instances (Small, Medium, Large)
+        + Pricing tier (Free, Shared, Basic, Standard, Premium, PremiumV2, PremiumV3, Isolated)
+    * [Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal): logical container that holds related Azure resources created for the application.
+    * [Azure DNS](https://azure.microsoft.com/en-us/services/dns/): an Internet URL is assigned to the application for the clients to access the application over the Internet.
+    * [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview): a command line interface (bash or PowerShell) that is available after login into the Azure Portal. It has persistent storage for files and provides a Linux environment that can be used for application development and Azure administration.
+    * [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/): identity service providing authentication and authorization of users and services.
 
 ## Description How To Use CI/CD Pipline with GitHub and Azure
 ### Application Development and Testing in Azure Cloud Shell
