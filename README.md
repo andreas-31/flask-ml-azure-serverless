@@ -182,3 +182,9 @@ These Azure CLI commands are also provided in the file ```commands.sh``` in this
 | ![Test application inside of GitHub Actions workflow with locust, Page 2](https://user-images.githubusercontent.com/20167788/115404656-d2bf3700-a1ed-11eb-996f-a51048392876.PNG) | 
 |:--:| 
 | *Running load tests inside of Github Actions with locust in the workflow step "Run load tests", Page 2* |
+
+## Possible Improvements of the Application in the Future
+- Containerization: create a Docker image and publish it on DockerHub
+- Run application on Kubernetes and pull container image from DockerHub
+- Add authentication so that only known users are allowed to access the API
+- A selection of multiple machine learning models could be provided for the user to select when calling the API endpoint
