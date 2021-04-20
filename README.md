@@ -58,26 +58,34 @@ $ source ~/.azure-devops/bin/activate # Python virtual environment is activated
 |:--:| 
 | *Passing tests that are displayed after running the ```make all``` command from the Makefile.* |
 
-#### Testing
+#### Testing for CI
+##### Unit Tests
 Unit tests are configured with pytest and can be run explicitly by executing the command ```make test```. These tests are defined in files ```tests/conftest.py``` and ```tests/unit/test_app.py```. Unit tests check the availability and responses of the Flask routes or URLs "/" and "/predict".
 
 | ![Output of a test run](https://user-images.githubusercontent.com/20167788/115150446-b8a81c00-a068-11eb-8e4b-0eacd65aa881.PNG) | 
 |:--:| 
 | *Output of a test run started with ```make test```* |
 
+##### Load Tests
 Load tests are configured and executed with locust and can be run explicitly by executing one of these commands:
-- ```make loadlocalhost```: load test the application running on localhost (http://localhost:5000)
+- ```make loadlocalhost```: after starting the application by running ```python3 ./app.py``` on localhost (http://localhost:5000), load test the application 
 - ```make load```: load test the application that is deployed on Azure App Services (in my case https://flask-ml-service-agaupmann.azurewebsites.net)
 Generated traffic load is sent to Flask routes or URLs "/" and "/predict".
 
+| ![Load testing ML app running on localhost, Page 1](https://user-images.githubusercontent.com/20167788/115356054-9246c580-a1bb-11eb-9e4b-10a2ca41dd31.png) | 
+|:--:| 
+| *Load testing ML app running on localhost with locust. Testing can also be started with command ```make loadlocalhost```, Page 1* |
 
+| ![Load testing ML app running on localhost, Page 2](https://user-images.githubusercontent.com/20167788/115356065-9541b600-a1bb-11eb-8d7a-f5980fbc6409.png) | 
+|:--:| 
+| *Load testing ML app running on localhost with locust. Testing can also be started with command ```make loadlocalhost```, Page 2* |
 
 #### GitHub Actions for CI and CD
 For automated CI/CD (Continuous Integration and Continuous Delivery), GitHub Actions is used. The CI/CD workflow is defined in the YAML file ```.github/workflows/main.yml``` in this repository. The workflow contains these stages:
 - CI: Set up Python environment
 - CI: Install dependencies
 - CI: Lint Python source code with pylint
-- CI: Run unit tests with pytest
+- CI: Run tests with pytest and locust
 - CD: Login to Azure
 - CD: Configure Azure App Services
 - CD: Deploy app to Azure App Services
