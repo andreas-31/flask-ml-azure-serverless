@@ -121,7 +121,45 @@ According to Xiaodi from the Udacity Student Services Team it’s ok to use Gith
 | *Screenshot of a successful prediction in Azure Cloud Shell* |
 
 #### Use the Azure CLI to deploy and manage an application
+The Azure CLI can be used for manual deployment of the application into Azure App Services. The following commands can be used to manage the application on the command line.
+```
+# Make a dryrun to see if deployment to Azure App Services would be successful
+az webapp up -n flask-ml-service-agaupmann --location eastus --sku F1 --dryrun
 
-#### Test the application inside of Azure Pipelines
+# Deploy the application to Azure Web Services
+az webapp up -n flask-ml-service-agaupmann --location eastus --sku F1
+
+# List all deployed applications
+az webapp list
+
+# Redeploy of application, e.g. after implementing new functionality
+az webapp up
+
+# Get the details of a web app's logging configuration
+az webapp log show
+
+# Start live log tracing for a web app
+az webapp log tail
+
+# Remove the application's deployment from Azure App Services
+az webapp delete --name flask-ml-service
+```
+These Azure CLI commands are also provided in the file ```commands.sh``` in this repository.
+
+#### Test the application inside of GitHub Actions
+| ![Test application inside of GitHub Actions workflow](https://user-images.githubusercontent.com/20167788/115404890-04d09900-a1ee-11eb-9450-dcc9a88023b3.PNG) | 
+|:--:| 
+| *Test application inside of GitHub Actions workflow: the testing steps are "Test with pytest" before deployment and "Run load tests" after deployment* |
+
+| ![Test application inside of GitHub Actions workflow with pytest](https://user-images.githubusercontent.com/20167788/115404899-05692f80-a1ee-11eb-8154-00f0481e9fcb.PNG) | 
+|:--:| 
+| *Running unit tests inside of Github Actions with pytest in the workflow step "Test with pytest"* |
 
 #### Load test the application using Locust
+| ![Test application inside of GitHub Actions workflow with locust, Page 1](https://user-images.githubusercontent.com/20167788/115404650-d226a080-a1ed-11eb-8617-3fc6158260d7.PNG) | 
+|:--:| 
+| *Running load tests inside of Github Actions with locust in the workflow step "Run load tests", Page 1* |
+
+| ![Test application inside of GitHub Actions workflow with locust, Page 2](https://user-images.githubusercontent.com/20167788/115404656-d2bf3700-a1ed-11eb-996f-a51048392876.PNG) | 
+|:--:| 
+| *Running load tests inside of Github Actions with locust in the workflow step "Run load tests", Page 2* |
