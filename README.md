@@ -70,6 +70,9 @@ Load tests are configured and executed with locust and can be run explicitly by 
 - ```make load```: load test the application that is deployed on Azure App Services (in my case https://flask-ml-service-agaupmann.azurewebsites.net)
 Generated traffic load is sent to Flask routes or URLs "/" and "/predict".
 
+
+
+#### GitHub Actions for CI and CD
 For automated CI/CD (Continuous Integration and Continuous Delivery), GitHub Actions is used. The CI/CD workflow is defined in the YAML file ```.github/workflows/main.yml``` in this repository. The workflow contains these stages:
 - CI: Set up Python environment
 - CI: Install dependencies
