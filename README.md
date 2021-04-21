@@ -139,8 +139,28 @@ The GitHub Actions workflow for Continuous Integration and Continuous Delivery (
 | *GitHub Actions YAML file for CI and CD, Page 2* |
 
 ### Continuous Delivery
+#### Consulting Udacity Support about Using GitHub Actions instead of Azure Pipelines
 *Note: Microsoft made a change in Azure Pipelines Grant for Public Projects. It set the maximum number of build requests to 0. This means that nothing is built until you pay for it or you can get a free grant. Please [see this blog post](https://devblogs.microsoft.com/devops/change-in-azure-pipelines-grant-for-public-projects/).
 According to Xiaodi from the Udacity Student Services Team it’s ok to use Github Actions instead of Azure Pipeline in the project.*
+
+##### Udacity Support Ticket #1385528
+- Link to the ticket in Udacity's Zendesk support system: [Azure Pipelines Builds No Longer Free](https://udacity.zendesk.com/hc/en-us/requests/1385528)
+- Please find also these printouts in PDF format:
+    * [Prinout of ticket from Udacity Zendesk website](https://github.com/andreas-31/flask-ml-azure-serverless/files/6353651/Udacity_Support_Ticket_1385528.pdf)
+    * [Printout of email communication with Udacity Support](https://github.com/andreas-31/flask-ml-azure-serverless/files/6353650/Udacity_Support_Email.pdf)
+
+##### Screenshots of Udacity Support Ticket #1385528
+| ![Screenshot of Ticket #1385528, Page 2](https://user-images.githubusercontent.com/20167788/115615291-1188e600-a2ef-11eb-86ab-9995a389f57c.PNG) | 
+|:--:| 
+| *Screenshot of Ticket #1385528, Page 2 - confirmation by Xiaodi (Udacity Support) is highlighted in blue* |
+
+| ![Screenshot of Ticket #1385528, Page 1](https://user-images.githubusercontent.com/20167788/115615294-12217c80-a2ef-11eb-8a76-18e1604003bf.PNG) | 
+|:--:| 
+| *Screenshot of Ticket #1385528, Page 1* |
+
+| ![Screenshot of all opened tickets](https://user-images.githubusercontent.com/20167788/115615298-1352a980-a2ef-11eb-91dc-0e12429f4c13.PNG) | 
+|:--:| 
+| *Screenshot of all opened tickets* | 
 
 #### Deploy the application using GitHub Actions into Azure App Services
 | ![Screenshot of Azure Azure App Service showing deployed ML application](https://user-images.githubusercontent.com/20167788/115397275-347ba300-a1e6-11eb-95d5-f07fde558c31.PNG) | 
