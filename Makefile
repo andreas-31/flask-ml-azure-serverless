@@ -1,6 +1,5 @@
 setup:
 	python3 -m venv ~/.azure-devops
-	#source ~/.azure-devops/bin/activate # fails if sh is used as shell
 	
 install:
 	pip install --upgrade pip &&\
