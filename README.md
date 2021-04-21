@@ -146,7 +146,7 @@ According to Xiaodi from the Udacity Student Services Team it’s ok to use Gith
 ##### Udacity Support Ticket #1385528
 - Link to the ticket in Udacity's Zendesk support system: [Azure Pipelines Builds No Longer Free](https://udacity.zendesk.com/hc/en-us/requests/1385528)
 - Please find also these printouts in PDF format:
-    * [Prinout of ticket from Udacity Zendesk website](https://github.com/andreas-31/flask-ml-azure-serverless/files/6353651/Udacity_Support_Ticket_1385528.pdf)
+    * [Printout of ticket from Udacity Zendesk website](https://github.com/andreas-31/flask-ml-azure-serverless/files/6353651/Udacity_Support_Ticket_1385528.pdf)
     * [Printout of email communication with Udacity Support](https://github.com/andreas-31/flask-ml-azure-serverless/files/6353650/Udacity_Support_Email.pdf)
 
 ##### Screenshots of Udacity Support Ticket #1385528
