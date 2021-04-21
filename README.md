@@ -56,6 +56,17 @@ The architecture of the Machine Learning Application comprises the following ele
     * [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview): a command line interface (bash or PowerShell) that is available after login into the Azure Portal. It has persistent storage for files and provides a Linux environment that can be used for application development and Azure administration.
     * [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/): identity service providing authentication and authorization of users and services.
 
+## Project Management
+
+### Trello Board
+Link to Trello Board: [Task Board Udacity](https://trello.com/b/1wJA8THi/task-board-udacity)
+
+### Project Plan
+Link to project plan on Google Sheets: [Udacity Project Plan](https://docs.google.com/spreadsheets/d/1ndce_5hmYX9DcHrf5YyK9V8OKs6JIFIIEpAznDf6vY8/edit?usp=sharing)
+
+## Demo of Application with Screencast
+Link to YouTube video: [Demo CI/CD Pipeline for Web Application](https://youtu.be/4LDal-ULovw)
+
 ## Description How To Use CI/CD Pipline with GitHub and Azure
 ### Application Development and Testing in Azure Cloud Shell
 #### Azure Cloud Shell Setup
