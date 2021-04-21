@@ -3,7 +3,8 @@
 
 Deploy Flask Machine Learning Application on Azure App Services
 
-## API of Machine Learning Application
+## Overview of the Project
+### Functionality and API of Machine Learning Application
 The application is implemented in Python by using the Flask framework. It uses a pre-built machine learning model to predict housing prices based on the [Bosten Housing Dataset](https://www.kaggle.com/prasadperera/the-boston-housing-dataset). The prediction functionality is made available as API endpoint "/predict". By sending a feature set formatted as JSON in an HTTP POST request, the predicted price is returned formatted as JSON. Example for querying the API endpoint:
 ```
 $ curl -d '{
@@ -35,7 +36,7 @@ Note: the following bash scripts can be used to send these requests for yourself
 - ```make_predict.sh``` to query an app running on your local machine
 - ```make_predict_azure_app.sh``` to query an app running remotly on another machine
 
-## Architecture of Machine Learning Application
+### Architecture of Machine Learning Application
 | ![Architectural Diagram of the Machine Learning application](https://user-images.githubusercontent.com/20167788/115421185-0acd7680-a1fc-11eb-8cde-47e7ea61d5c5.png) | 
 |:--:| 
 | *Architectural Diagram of the Machine Learning application* |
@@ -56,18 +57,18 @@ The architecture of the Machine Learning Application comprises the following ele
     * [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview): a command line interface (bash or PowerShell) that is available after login into the Azure Portal. It has persistent storage for files and provides a Linux environment that can be used for application development and Azure administration.
     * [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/): identity service providing authentication and authorization of users and services.
 
-## Project Management
+### Project Management
 
-### Trello Board
+#### Trello Board
 Link to Trello Board: [Task Board Udacity](https://trello.com/b/1wJA8THi/task-board-udacity)
 
-### Project Plan
+#### Project Plan
 Link to project plan on Google Sheets: [Udacity Project Plan](https://docs.google.com/spreadsheets/d/1ndce_5hmYX9DcHrf5YyK9V8OKs6JIFIIEpAznDf6vY8/edit?usp=sharing)
 
-## Demo of Application with Screencast
+### Demo of Application with Screencast
 Link to YouTube video: [Demo CI/CD Pipeline for Web Application](https://youtu.be/4LDal-ULovw)
 
-## Description How To Use CI/CD Pipline with GitHub and Azure
+## Description How To Use Project's CI/CD Pipline with GitHub and Azure
 ### Application Development and Testing in Azure Cloud Shell
 #### Azure Cloud Shell Setup
 After setting up an [Azure account](https://azure.microsoft.com/en-us/free/), log into the Azure portal and start the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview). Clone the repository into Azure Cloud Shell via HTTPS or SSH. The following screenshot shows the command for cloning via SSH.
